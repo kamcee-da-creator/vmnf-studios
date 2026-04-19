@@ -124,44 +124,13 @@ const faqs = [
   },
 ];
 
-function Logo() {
-  return (
-    <div className="flex items-center gap-2">
-      <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold">
-        S
-      </div>
-      <span className="font-semibold text-lg tracking-tight">Social Realtr</span>
-    </div>
-  );
-}
-
 function Index() {
   const [activeTab, setActiveTab] = useState(contentTabs[0]);
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans antialiased">
-      {/* Nav */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Logo />
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#home" className="hover:text-foreground transition">Home</a>
-            <a href="#features" className="hover:text-foreground transition">Features</a>
-            <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
-            <a href="#examples" className="hover:text-foreground transition">Examples</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <button className="hidden sm:inline-flex px-4 py-2 text-sm rounded-lg border border-border hover:border-foreground/40 transition">
-              Log In
-            </button>
-            <button className="px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition">
-              Book a Demo
-            </button>
-          </div>
-        </nav>
-      </header>
+    <div className="text-foreground">
 
       {/* Hero */}
       <section
