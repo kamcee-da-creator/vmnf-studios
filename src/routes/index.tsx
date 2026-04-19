@@ -460,40 +460,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <Logo />
-              <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-                Done-for-you social media for top-producing realtors.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">About</a></li>
-                <li><a href="#" className="hover:text-foreground">Careers</a></li>
-                <li><a href="#" className="hover:text-foreground">Contact</a></li>
-                <li><a href="#" className="hover:text-foreground">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">Features</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">Content Pipeline™</a></li>
-                <li><a href="#" className="hover:text-foreground">Scheduler</a></li>
-                <li><a href="#" className="hover:text-foreground">Analytics</a></li>
-                <li><a href="#" className="hover:text-foreground">Click Connect™</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-10 pt-6 border-t border-border text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} Social Realtr. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
