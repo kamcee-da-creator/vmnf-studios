@@ -124,44 +124,13 @@ const faqs = [
   },
 ];
 
-function Logo() {
-  return (
-    <div className="flex items-center gap-2">
-      <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold">
-        S
-      </div>
-      <span className="font-semibold text-lg tracking-tight">Social Realtr</span>
-    </div>
-  );
-}
-
 function Index() {
   const [activeTab, setActiveTab] = useState(contentTabs[0]);
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans antialiased">
-      {/* Nav */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Logo />
-          <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-            <a href="#home" className="hover:text-foreground transition">Home</a>
-            <a href="#features" className="hover:text-foreground transition">Features</a>
-            <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
-            <a href="#examples" className="hover:text-foreground transition">Examples</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <button className="hidden sm:inline-flex px-4 py-2 text-sm rounded-lg border border-border hover:border-foreground/40 transition">
-              Log In
-            </button>
-            <button className="px-4 py-2 text-sm font-medium rounded-lg bg-primary text-primary-foreground hover:opacity-90 transition">
-              Book a Demo
-            </button>
-          </div>
-        </nav>
-      </header>
+    <div className="text-foreground">
 
       {/* Hero */}
       <section
@@ -491,40 +460,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <Logo />
-              <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-                Done-for-you social media for top-producing realtors.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">About</a></li>
-                <li><a href="#" className="hover:text-foreground">Careers</a></li>
-                <li><a href="#" className="hover:text-foreground">Contact</a></li>
-                <li><a href="#" className="hover:text-foreground">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">Features</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">Content Pipeline™</a></li>
-                <li><a href="#" className="hover:text-foreground">Scheduler</a></li>
-                <li><a href="#" className="hover:text-foreground">Analytics</a></li>
-                <li><a href="#" className="hover:text-foreground">Click Connect™</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-10 pt-6 border-t border-border text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} Social Realtr. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
