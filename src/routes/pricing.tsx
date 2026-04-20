@@ -65,11 +65,41 @@ function PricingPage() {
         <div className="max-w-4xl mx-auto px-6 pt-20 pb-12 text-center">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Simple, Transparent Pricing.</h1>
           <p className="mt-6 text-lg text-muted-foreground">No contracts. No surprises. Cancel anytime.</p>
-          <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-border bg-card p-1.5">
-            <button onClick={() => setAnnual(false)} className={`px-4 py-1.5 rounded-full text-sm font-medium transition ${!annual ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}>Monthly</button>
-            <button onClick={() => setAnnual(true)} className={`px-4 py-1.5 rounded-full text-sm font-medium transition ${annual ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}>
-              Annual <span className="ml-1 text-xs opacity-80">-20%</span>
-            </button>
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <div
+              role="tablist"
+              aria-label="Billing period"
+              className="relative inline-flex items-center rounded-full border border-border bg-card p-1 shadow-sm"
+            >
+              {/* Sliding pill */}
+              <span
+                aria-hidden
+                className={`absolute top-1 bottom-1 w-1/2 rounded-full bg-primary transition-transform duration-300 ease-out ${annual ? "translate-x-full" : "translate-x-0"}`}
+                style={{ boxShadow: "var(--shadow-glow)" }}
+              />
+              <button
+                role="tab"
+                aria-selected={!annual}
+                onClick={() => setAnnual(false)}
+                className={`relative z-10 px-6 py-2 rounded-full text-sm font-semibold transition-colors ${!annual ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              >
+                Monthly
+              </button>
+              <button
+                role="tab"
+                aria-selected={annual}
+                onClick={() => setAnnual(true)}
+                className={`relative z-10 inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-semibold transition-colors ${annual ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"}`}
+              >
+                Annual
+                <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full transition-colors ${annual ? "bg-primary-foreground/20 text-primary-foreground" : "bg-primary/15 text-primary"}`}>
+                  SAVE 20%
+                </span>
+              </button>
+            </div>
+            <p className={`text-sm transition-opacity ${annual ? "text-primary opacity-100" : "text-muted-foreground opacity-70"}`}>
+              {annual ? "🎉 You're saving 20% with annual billing" : "Switch to annual and save 20%"}
+            </p>
           </div>
         </div>
       </section>
@@ -80,11 +110,20 @@ function PricingPage() {
             <div key={p.name} className={`relative rounded-2xl border p-8 bg-card transition hover:-translate-y-1 ${p.popular ? "border-primary" : "border-border"}`} style={p.popular ? { boxShadow: "var(--shadow-glow)" } : undefined}>
               {p.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">Most Popular</span>}
               <h3 className="text-xl font-semibold">{p.name}</h3>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-5xl font-bold">${price(p.monthly)}</span>
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="text-5xl font-bold tracking-tight">${price(p.monthly)}</span>
                 <span className="text-muted-foreground">/mo</span>
+                {annual && (
+                  <span className="text-base text-muted-foreground line-through ml-1">${p.monthly}</span>
+                )}
               </div>
-              {annual && <div className="text-xs text-primary mt-1">Billed annually</div>}
+              <div className="text-xs mt-1 h-4">
+                {annual ? (
+                  <span className="text-primary font-medium">Billed annually · ${price(p.monthly) * 12}/yr</span>
+                ) : (
+                  <span className="text-muted-foreground">Billed monthly</span>
+                )}
+              </div>
               <ul className="mt-6 space-y-3">
                 {p.perks.map((perk) => (
                   <li key={perk} className="flex items-start gap-2 text-sm"><span className="text-primary mt-0.5">✓</span><span>{perk}</span></li>
