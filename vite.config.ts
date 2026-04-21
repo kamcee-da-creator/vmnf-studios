@@ -1,6 +1,4 @@
-import { defineConfig } from 'vite'
-import tsrPlugin from '@tanstack/start/plugin'
+import { defineConfig } from "vite";
+import { lovableTanstackConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({
-  plugins: [tsrPlugin()],
-})
+export default defineConfig(lovableTanstackConfig());
