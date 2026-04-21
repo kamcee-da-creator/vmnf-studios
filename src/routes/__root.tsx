@@ -33,11 +33,15 @@ export const Route = createRootRoute({
       { title: "Vmnf Studios — Your Social Media, On Autopilot" },
       { name: "description", content: "Done-for-you social media content for realtors." },
       { name: "author", content: "Vmnf Studios" },
-      { property: "og:title", content: "Vmnf Studios" },
-      { property: "og:description", content: "Your social media, on autopilot." },
+      { property: "og:title", content: "Vmnf Studios — Your Social Media, On Autopilot" },
+      { property: "og:description", content: "Done-for-you social media content for realtors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Vmnf Studios — Your Social Media, On Autopilot" },
+      { name: "twitter:description", content: "Done-for-you social media content for realtors." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/85a11348-652c-45f4-be8e-3434ceb391e3/id-preview-beb0419c--9378b3a0-229a-45dc-91c8-8e77d617e970.lovable.app-1776766741237.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/85a11348-652c-45f4-be8e-3434ceb391e3/id-preview-beb0419c--9378b3a0-229a-45dc-91c8-8e77d617e970.lovable.app-1776766741237.png" },
     ],
     links: [
       {
